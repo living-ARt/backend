@@ -1,4 +1,4 @@
-const {db} = require('../server/db')
+const db = require('../server/db')
 const {Museum, Artwork} = require('../server/db/models')
 
 async function seed() {
