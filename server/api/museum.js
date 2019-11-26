@@ -2,6 +2,15 @@ const router = require('express').Router()
 const Museum = require("../db/models/museum")
 const Artwork = require("../db/models/artwork")
 
+router.get("/", async(req, res, next) =>{
+  try{
+    const allMuseums = await Museum.findAll()
+    res.json(allMuseums)
+  }catch(err){
+    next(err)
+  }
+})
+
 //this gets a list of all museums
 router.get("/:id", async (req, res, next) => {
   try{

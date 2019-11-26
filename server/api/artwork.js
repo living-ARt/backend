@@ -30,7 +30,8 @@ router.post("/", async (req, res, next) => {
       imageUrl: req.body.imageUrl,
       videoUrl: req.body.videoUrl,
       description: req.body.description,
-      descriptionSound: req.body.descriptionSound
+      descriptionSound: req.body.descriptionSound,
+      museumId: req.body.museumId //added this line, needs to be committed, pushed, and deployed
     }
     await Artwork.create(newArt)
     const createdArt = await Artwork.findAll({
