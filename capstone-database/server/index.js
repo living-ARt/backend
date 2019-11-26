@@ -14,21 +14,9 @@ const createApp = () => {
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
 
-  // app.use(compression())
-
   app.use('/api', require('./api'))
 
   app.use(express.static(path.join(__dirname, '..', 'public')))
-
-  // app.use((req, res, next) => {
-  //   if (path.extname(req.path).length) {
-  //     const err = new Error('Not found')
-  //     err.status = 404
-  //     next(err)
-  //   } else {
-  //     next()
-  //   }
-  // })
 
   app.use((err, req, res, next) => {
     console.error(err)
@@ -39,8 +27,6 @@ const createApp = () => {
 //////
 
 const syncDb = () => db.sync()
-
-console.log("I'm in server/index")
 
 const startListening = () => {
   db.sync() // if you update your db schemas, make sure you drop the tables first and then recreate them

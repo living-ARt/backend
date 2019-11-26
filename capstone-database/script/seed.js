@@ -13,8 +13,7 @@ async function seed() {
       description: "",
       imageUrl: "",
       videoUrl: "",
-      descriptionSound: "",
-      museumId: 1
+      descriptionSound: ""
     }),
 
     Museum.create({

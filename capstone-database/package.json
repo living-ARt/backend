@@ -2,6 +2,9 @@
   "name": "capstone-database",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=7.0.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\"",
