@@ -1,19 +1,17 @@
 const router = require('express').Router()
 const Artwork = require("../db/models/artwork")
 
+//this gets all artwork in our entire database
 router.get("/", async(req, res, next) => {
   try{
-    const allArt = await Artwork.findAll({
-      where: {
-        museumId: req.body.museumId
-      }
-    })
+    const allArt = await Artwork.findAll()
     res.json(allArt)
   } catch(err){
     next(err)
   }
 })
 
+//this gets just one artwork
 router.get("/:id", async (req, res, next) => {
   try{
     const art = await Artwork.findByPk(req.params.id)
