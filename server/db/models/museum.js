@@ -11,6 +11,14 @@ const Museum = db.define('museum', {
   },
   location: {
     type: Sequelize.STRING
+  },
+  active: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  image: {
+    type: Sequelize.STRING,
+    defaultValue: "https://www.worcesterart.org/events/family/images/family-at-worcester-art-museum.jpg"
   }
 })
 

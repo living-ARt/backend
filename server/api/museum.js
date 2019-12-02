@@ -39,7 +39,9 @@ router.post("/", async (req, res, next) => {
   try{
     const newMuseum = {
       name: req.body.name,
-      location: req.body.location
+      location: req.body.location,
+      active: req.body.active,
+      image: req.body.image
     }
     await Museum.create(newMuseum)
     const createdMuseum = await Museum.findAll({
@@ -59,7 +61,9 @@ router.put('/:id', async (req, res, next) => {
     const currentMuseum = await Museum.findByPk(req.params.id)
     const newProperties = {
       name: req.body.name,
-      location: req.body.location
+      location: req.body.location,
+      active: req.body.active,
+      image: req.body.image
     }
     await currentMuseum.update(newProperties)
     res.json(currentMuseum)
