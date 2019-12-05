@@ -28,7 +28,10 @@ router.post("/", async (req, res, next) => {
       artist: req.body.artist,
       date: req.body.date,
       imageUrl: req.body.imageUrl,
-      videoUrl: req.body.videoUrl,
+      gifUrl: req.body.gifUrl,
+      VRUrl: req.body.VRUrl,
+      location: req.body.location,
+      physicalWidth: req.body.physicalWidth,
       description: req.body.description,
       descriptionSound: req.body.descriptionSound,
       museumId: req.body.museumId
@@ -54,7 +57,10 @@ router.put("/:id", async (req, res, next) => {
       artist: req.body.artist,
       date: req.body.date,
       imageUrl: req.body.imageUrl,
-      videoUrl: req.body.videoUrl,
+      gifUrl: req.body.gifUrl,
+      VRUrl: req.body.VRUrl,
+      location: req.body.location,
+      physicalWidth: req.body.physicalWidth,
       description: req.body.description,
       descriptionSound: req.body.descriptionSound,
       museumId: req.body.museumId
@@ -65,5 +71,19 @@ router.put("/:id", async (req, res, next) => {
     next(err)
   }
 })
+
+// For deleting an artwork - uncomment out to allow for delete requests:
+// router.delete("/", async(req, res, next) => {
+//   try{
+//     await Artwork.destroy({
+//       where: {
+//         id: req.body.id
+//       }
+//     })
+//     res.json("delete successful")
+//   }catch(err){
+//     next(err)
+//   }
+// })
 
 module.exports = router

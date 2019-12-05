@@ -72,4 +72,18 @@ router.put('/:id', async (req, res, next) => {
   }
 })
 
+// For deleting a museum - uncomment out to allow for delete requests:
+// router.delete("/", async(req, res, next) => {
+//   try{
+//     await Museum.destroy({
+//       where: {
+//         id: req.body.id
+//       }
+//     })
+//     res.json("delete successful")
+//   }catch(err){
+//     next(err)
+//   }
+// })
+
 module.exports = router
