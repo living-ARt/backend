@@ -9,7 +9,7 @@ const Artwork = db.define('artwork', {
   imageUrl: {
     type: Sequelize.STRING,
   },
-  videoUrl: {
+  gifUrl: {
     type: Sequelize.STRING
   },
   artist: {
@@ -26,6 +26,15 @@ const Artwork = db.define('artwork', {
   },
   descriptionSound: {
     type: Sequelize.STRING,
+  },
+  VRUrl:{
+    type: Sequelize.STRING
+  },
+  physicalWidth: {
+    type: Sequelize.DECIMAL
+  },
+  location: {
+    type: Sequelize.STRING
   }
 })
 
